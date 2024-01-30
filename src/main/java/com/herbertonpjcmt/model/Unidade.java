@@ -1,4 +1,4 @@
 package com.herbertonpjcmt.model;
 
-public class lotacao {
+public class Unidade {
 }

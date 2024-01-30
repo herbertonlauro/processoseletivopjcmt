@@ -1,4 +1,4 @@
 package com.herbertonpjcmt.model;
 
-public class cidade {
+public class Pessoa {
 }

@@ -1,4 +1,4 @@
 package com.herbertonpjcmt.model;
 
-public class unidade_endereco {
+public class Foto_pessoa {
 }

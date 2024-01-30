@@ -1,4 +1,4 @@
 package com.herbertonpjcmt.model;
 
-public class unidade {
+public class Unidade_Endereco {
 }

@@ -1,4 +1,4 @@
 package com.herbertonpjcmt.model;
 
-public class foto_pessoa {
+public class Servidor_Temporario {
 }

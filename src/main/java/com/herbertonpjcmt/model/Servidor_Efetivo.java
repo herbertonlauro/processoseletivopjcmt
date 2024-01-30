@@ -1,4 +1,4 @@
 package com.herbertonpjcmt.model;
 
-public class pessoa_endereco {
+public class Servidor_Efetivo {
 }
