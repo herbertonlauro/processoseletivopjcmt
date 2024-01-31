@@ -24,7 +24,7 @@ public class Pessoa {
     private String nome;
 
     @Column(name = "pes_data_nascimento")
-    private LocalDate data;
+    private LocalDate datanascimento;
 
     @Column(name = "pes_sexo")
     private String sexo;

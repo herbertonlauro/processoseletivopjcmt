@@ -11,6 +11,7 @@ import java.time.LocalDate;
 @Table(name = "lotacao")
 @Setter
 @Getter
+@NoArgsConstructor
 public class Lotacao {
 
     @Id
@@ -24,5 +25,10 @@ public class Lotacao {
     @Column(name = "lot_data_remocao")
     private LocalDate dataremocao;
 
+    @Column(name = "lot_portaria")
+    private String portaria;
 
+    @ManyToOne()
+    @JoinColumn(name = "uni_id")
+    private  Unidade unidade;
 }
