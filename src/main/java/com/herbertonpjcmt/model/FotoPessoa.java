@@ -1,12 +1,18 @@
 package com.herbertonpjcmt.model;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
 @Table(name = "foto_pessoa")
+@Setter
+@Getter
+@NoArgsConstructor
 public class FotoPessoa {
 
     @Id
@@ -21,4 +27,8 @@ public class FotoPessoa {
 
     @Column(name = "fp_hash")
     private String hash;
+
+    @ManyToOne
+    @JoinColumn(name = "pes_id")
+    private Pessoa pessoa;
 }

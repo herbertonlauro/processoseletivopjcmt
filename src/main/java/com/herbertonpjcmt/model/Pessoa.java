@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
-import java.util.Date;
+import java.util.Set;
 
 @Entity
 @Table(name = "pessoa")
@@ -31,5 +31,11 @@ public class Pessoa {
 
     @Column(name = "pes_mae")
     private String pes_pai;
+
+
+
+    @ManyToMany
+    @JoinTable(name = "pessoa_endereco", joinColumns = @JoinColumn(name = "pes_id"), inverseJoinColumns = @JoinColumn(name = "end_id"))
+    private Set<Endereco> endereco;
 
 }

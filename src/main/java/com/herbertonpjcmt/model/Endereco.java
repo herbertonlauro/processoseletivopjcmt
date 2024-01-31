@@ -34,4 +34,6 @@ public class Endereco {
     @JoinColumn(name = "cid_id")
     private Cidade cidade;
 
+
+
 }

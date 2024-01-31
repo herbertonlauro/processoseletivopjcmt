@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "Cidade")
@@ -24,5 +25,5 @@ public class Cidade {
     private String uf;
 
     @OneToMany(mappedBy = "cidade")
-    private List<Endereco> endereco;
+    private Set<Endereco> endereco;
 }
