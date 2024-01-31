@@ -18,10 +18,10 @@ public class Cidade {
     @Column(name = "cid_id")
     private Integer id;
 
-    @Column(name = "cid_nome")
+    @Column(name = "cid_nome", length = 200)
     private String nome;
 
-    @Column(name = "cid_uf")
+    @Column(name = "cid_uf", length = 2)
     private String uf;
 
     @OneToMany(mappedBy = "cidade")

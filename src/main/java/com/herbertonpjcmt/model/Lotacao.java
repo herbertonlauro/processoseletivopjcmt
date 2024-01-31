@@ -25,7 +25,7 @@ public class Lotacao {
     @Column(name = "lot_data_remocao")
     private LocalDate dataremocao;
 
-    @Column(name = "lot_portaria")
+    @Column(name = "lot_portaria", length = 100)
     private String portaria;
 
     @ManyToOne()

@@ -6,7 +6,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 @Entity
 @Table(name = "foto_pessoa")
@@ -22,10 +21,10 @@ public class FotoPessoa {
 
     @Column(name = "fp_data")
     private LocalDate data;
-    @Column(name = "fp_bucket")
+    @Column(name = "fp_bucket", length = 50)
     private String bucket;
 
-    @Column(name = "fp_hash")
+    @Column(name = "fp_hash", length = 50)
     private String hash;
 
     @ManyToOne

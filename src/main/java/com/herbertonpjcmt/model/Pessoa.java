@@ -20,19 +20,20 @@ public class Pessoa {
     @Column(name = "pes_id")
     private Long id;
 
-    @Column(name = "pes_nome")
+    @Column(name = "pes_nome", length = 200)
     private String nome;
 
     @Column(name = "pes_data_nascimento")
     private LocalDate datanascimento;
 
-    @Column(name = "pes_sexo")
+    @Column(name = "pes_sexo", length = 9)
     private String sexo;
 
-    @Column(name = "pes_mae")
-    private String pes_pai;
+    @Column(name = "pes_mae", length = 200)
+    private String mae;
 
-
+    @Column(name = "pes_pai", length = 200)
+    private String pai;
 
     @ManyToMany
     @JoinTable(name = "pessoa_endereco", joinColumns = @JoinColumn(name = "pes_id"), inverseJoinColumns = @JoinColumn(name = "end_id"))
