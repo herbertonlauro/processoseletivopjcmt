@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -38,5 +39,9 @@ public class Pessoa {
     @ManyToMany
     @JoinTable(name = "pessoa_endereco", joinColumns = @JoinColumn(name = "pes_id"), inverseJoinColumns = @JoinColumn(name = "end_id"))
     private Set<Endereco> endereco;
+
+    @OneToMany
+    @JoinColumn(name = "pessoa")
+    private List<FotoPessoa> fotoPessoas;
 
 }

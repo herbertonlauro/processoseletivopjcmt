@@ -17,5 +17,4 @@ public class ServidorEfetivo extends Pessoa {
     @Column(name = "pes_id")
     private Pessoa pessoa;
 
-
 }

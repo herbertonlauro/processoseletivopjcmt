@@ -31,4 +31,8 @@ public class Lotacao {
     @ManyToOne()
     @JoinColumn(name = "uni_id")
     private  Unidade unidade;
+
+    @ManyToOne()
+    @JoinColumn(name = "pes_id")
+    private  Pessoa pessoa;
 }
