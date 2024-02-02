@@ -18,7 +18,7 @@ public class CidadeController {
     @Inject
     CidadeService cidadeService;
 
-    @Operation(summary = "Listar todos",description= "Lista todos as Cidades cadastrada")
+    @Operation(summary = "Listar todos",description= "Lista todas as Cidades cadastrada")
     @GET
     public List<CidadeDTO> Listar(){
         return cidadeService.listarcidade();
