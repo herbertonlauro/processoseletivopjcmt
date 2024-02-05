@@ -6,9 +6,10 @@ import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 
+@Table(name = "seridor_efetivo")
 @Getter
 @Setter
-@Table(name = "seridor_efetivo")
+
 public class ServidorEfetivo extends Pessoa {
 
     @Column(name = "se_matricula", length = 20)
