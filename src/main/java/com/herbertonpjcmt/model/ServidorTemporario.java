@@ -17,7 +17,5 @@ public class ServidorTemporario extends Pessoa{
     @Column(name = "st_data_demissao")
     private LocalDate DataDemissao;
 
-    @Column(name = "pes_id")
-    private Pessoa pessoa;
 
 }
