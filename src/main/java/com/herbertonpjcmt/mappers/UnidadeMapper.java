@@ -1,4 +1,4 @@
-package com.herbertonpjcmt.mapper;
+package com.herbertonpjcmt.mappers;
 
 import com.herbertonpjcmt.dto.UnidadeDTO;
 import com.herbertonpjcmt.model.Unidade;

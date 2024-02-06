@@ -1,4 +1,4 @@
-package com.herbertonpjcmt.mapper;
+package com.herbertonpjcmt.mappers;
 
 import com.herbertonpjcmt.dto.ServidorTemporarioDTO;
 import com.herbertonpjcmt.model.ServidorTemporario;

@@ -1,4 +1,4 @@
-package com.herbertonpjcmt.mapper;
+package com.herbertonpjcmt.mappers;
 
 import com.herbertonpjcmt.dto.LotacaoDTO;
 import com.herbertonpjcmt.model.Lotacao;
