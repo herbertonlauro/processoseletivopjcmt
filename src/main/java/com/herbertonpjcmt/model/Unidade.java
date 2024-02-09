@@ -25,8 +25,6 @@ public class Unidade {
     @Column(name = "unid_sigla", length = 20)
     private String sigla;
 
-    @OneToMany(mappedBy = "unidade")
-    private List<Lotacao> lotacao;
 
     @ManyToOne
     @JoinTable(name = "unidade_endereco", joinColumns = @JoinColumn(name = "unid_id"), inverseJoinColumns = @JoinColumn(name = "end_id"))

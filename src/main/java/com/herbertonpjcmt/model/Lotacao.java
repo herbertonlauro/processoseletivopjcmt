@@ -28,7 +28,7 @@ public class Lotacao {
     @Column(name = "lot_portaria", length = 100)
     private String portaria;
 
-    @ManyToOne()
+    @OneToOne()
     @JoinColumn(name = "uni_id")
     private  Unidade unidade;
 
