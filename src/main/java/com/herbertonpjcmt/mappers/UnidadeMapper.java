@@ -15,5 +15,5 @@ public interface UnidadeMapper {
     Unidade DTOtoUnidade(UnidadeDTO unidadeDTO);
 
     @Mapping(target = "id", ignore = true)
-    Unidade upLotacaoDTO(@MappingTarget Unidade unidade, UnidadeDTO unidadeDTO);
+    Unidade upUnidadeDTO(@MappingTarget Unidade unidade, UnidadeDTO unidadeDTO);
 }
