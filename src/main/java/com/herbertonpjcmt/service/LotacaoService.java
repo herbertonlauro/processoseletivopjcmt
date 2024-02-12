@@ -1,13 +1,42 @@
 package com.herbertonpjcmt.service;
 
 import com.herbertonpjcmt.dto.LotacaoDTO;
+import com.herbertonpjcmt.mappers.LotacaoMapper;
+import com.herbertonpjcmt.model.Lotacao;
+import com.herbertonpjcmt.repository.LotacaoRepository;
+import jakarta.inject.Inject;
+import jakarta.ws.rs.NotFoundException;
 
 import java.util.List;
 
 public class LotacaoService {
 
-    public List<LotacaoDTO> listar(){
+    @Inject
+    LotacaoRepository lotacaoRepository;
 
-        return null;
+    @Inject
+    LotacaoMapper lotacaoMapper;
+
+    public List<LotacaoDTO> listar(){
+        List<Lotacao> lotacaos = lotacaoRepository.listAll();
+        return lotacaos.stream().map(lotacaoMapper::toDTO).toList();
+    }
+
+    public LotacaoDTO inserir(LotacaoDTO lotacaoDTO){
+        Lotacao lotacao = lotacaoMapper.toEntity(lotacaoDTO);
+        lotacaoRepository.persist(lotacao);
+        return lotacaoMapper.toDTO(lotacao);
+    }
+
+    public LotacaoDTO editar(Long id, LotacaoDTO lotacaoDTO ){
+        Lotacao lotacao = lotacaoRepository.findByIdOptional(id).orElseThrow(() -> new NotFoundException("não encontrado"));
+        lotacaoMapper.uptoDTO(lotacao, lotacaoDTO);
+        lotacaoRepository.persist(lotacao);
+        return lotacaoMapper.toDTO(lotacao);
+    }
+
+    public void deletar(Long id){
+        Lotacao lotacao = lotacaoRepository.findByIdOptional(id).orElseThrow(() -> new NotFoundException("não encontrado"));
+        lotacaoRepository.delete(lotacao);
     }
 }

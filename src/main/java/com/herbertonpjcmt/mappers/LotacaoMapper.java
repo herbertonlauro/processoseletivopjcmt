@@ -8,11 +8,11 @@ import org.mapstruct.MappingTarget;
 
 @Mapper
 public interface LotacaoMapper {
-        LotacaoDTO lotacaoToDTO(Lotacao Lotacao);
+        LotacaoDTO toDTO(Lotacao Lotacao);
 
         @Mapping(target = "id", ignore = true)
-        Lotacao DTOtoLotacao(LotacaoDTO lotacaoDTO);
+        Lotacao toEntity(LotacaoDTO lotacaoDTO);
 
         @Mapping(target = "id", ignore = true)
-        Lotacao upLotacaoToDTO(@MappingTarget Lotacao lotacao, LotacaoDTO lotacaoDTO);
+        Lotacao uptoDTO(@MappingTarget Lotacao lotacao, LotacaoDTO lotacaoDTO);
 }

@@ -9,11 +9,11 @@ import org.mapstruct.MappingTarget;
 @Mapper
 public interface UnidadeMapper {
 
-    UnidadeDTO unidadeToDTO(Unidade unidade);
+    UnidadeDTO toDTO(Unidade unidade);
 
     @Mapping(target = "id", ignore = true)
-    Unidade DTOtoUnidade(UnidadeDTO unidadeDTO);
+    Unidade toEntity(UnidadeDTO unidadeDTO);
 
     @Mapping(target = "id", ignore = true)
-    Unidade upUnidadeDTO(@MappingTarget Unidade unidade, UnidadeDTO unidadeDTO);
+    Unidade uptoDTO(@MappingTarget Unidade unidade, UnidadeDTO unidadeDTO);
 }

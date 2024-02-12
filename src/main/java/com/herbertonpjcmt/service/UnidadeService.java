@@ -24,25 +24,31 @@ public class UnidadeService {
     UnidadeRepository unidadeRepository;
 
     public List<UnidadeDTO> listar(){
-        List<Unidade> unidades = new ArrayList<>();
-        return unidades.stream().map(unidadeMapper::unidadeToDTO).collect(Collectors.toList());
+        List<Unidade> unidades = unidadeRepository.listAll();
+        return unidades.stream().map(unidadeMapper::toDTO).collect(Collectors.toList());
     }
 
     @Transactional
     public UnidadeDTO inserir(UnidadeDTO unidadeDTO){
-        Unidade unidade = unidadeMapper.DTOtoUnidade(unidadeDTO);
+        Unidade unidade = unidadeMapper.toEntity(unidadeDTO);
         unidadeRepository.persist(unidade);
-        return unidadeMapper.unidadeToDTO(unidade);
+        return unidadeMapper.toDTO(unidade);
     }
     public UnidadeDTO editar(Long id, UnidadeDTO unidadeDTO){
         Unidade unidade = unidadeRepository.findByIdOptional(id).orElseThrow(() -> new NotFoundException("Não encontrado"));
-        unidadeMapper.upUnidadeDTO(unidade, unidadeDTO);
+        unidadeMapper.uptoDTO(unidade, unidadeDTO);
         unidadeRepository.persist(unidade);
-        return unidadeMapper.unidadeToDTO(unidade);
+        return unidadeMapper.toDTO(unidade);
     }
     public void deletar(Long id){
         Unidade unidade = unidadeRepository.findByIdOptional(id).orElseThrow(() -> new NotFoundException("Não entrontrado"));
         unidadeRepository.delete(unidade);
     }
+
+    public UnidadeDTO listarporid(Long id){
+        Unidade unidade = unidadeRepository.findByIdOptional(id).orElseThrow(() -> new NotFoundException("não encontrado"));
+        return unidadeMapper.toDTO(unidade);
+    }
+
 
 }
