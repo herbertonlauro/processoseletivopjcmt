@@ -34,17 +34,19 @@ public class UnidadeService {
         unidadeRepository.persist(unidade);
         return unidadeMapper.toDTO(unidade);
     }
+    @Transactional
     public UnidadeDTO editar(Long id, UnidadeDTO unidadeDTO){
         Unidade unidade = unidadeRepository.findByIdOptional(id).orElseThrow(() -> new NotFoundException("Não encontrado"));
         unidadeMapper.uptoDTO(unidade, unidadeDTO);
         unidadeRepository.persist(unidade);
         return unidadeMapper.toDTO(unidade);
     }
+    @Transactional
     public void deletar(Long id){
         Unidade unidade = unidadeRepository.findByIdOptional(id).orElseThrow(() -> new NotFoundException("Não entrontrado"));
         unidadeRepository.delete(unidade);
     }
-
+    @Transactional
     public UnidadeDTO listarporid(Long id){
         Unidade unidade = unidadeRepository.findByIdOptional(id).orElseThrow(() -> new NotFoundException("não encontrado"));
         return unidadeMapper.toDTO(unidade);
