@@ -2,15 +2,14 @@ package com.herbertonpjcmt.mappers;
 
 import com.herbertonpjcmt.dto.UnidadeDTO;
 import com.herbertonpjcmt.model.Unidade;
-import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
-import org.mapstruct.MappingTarget;
+import org.mapstruct.*;
 
-@Mapper
+@Mapper(componentModel = MappingConstants.ComponentModel.JAKARTA_CDI)
 public interface UnidadeMapper {
 
     UnidadeDTO toDTO(Unidade unidade);
 
+    @InheritInverseConfiguration
     @Mapping(target = "id", ignore = true)
     Unidade toEntity(UnidadeDTO unidadeDTO);
 
