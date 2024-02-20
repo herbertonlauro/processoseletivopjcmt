@@ -28,11 +28,26 @@ public class UnidadeController {
         return unidadeService.listar();
     }
 
-    @Operation(summary = "Cadastro de unidade", description = "Cadastrar unidade")
+    @Operation(summary = "Cadastro de unidade")
     @POST
     public Response criar(@RequestBody UnidadeDTO unidadeDTO){
         UnidadeDTO unidade = unidadeService.inserir(unidadeDTO);
         return Response.created(URI.create("/unidades")).entity(unidade).build();
     }
+
+    @Operation(summary = "Editar unidade")
+    @PUT
+    @Path("/{id}")
+    public UnidadeDTO editar(@PathParam("id") Long id, @RequestBody UnidadeDTO unidadeDTO){
+        return unidadeService.editar(id, unidadeDTO);
+    }
+
+    @Operation(summary = "Deletar unidade")
+    @DELETE
+    @Path("/{id}")
+    public void deletar(@PathParam("id") Long id){
+        unidadeService.deletar(id);
+    }
+
 }
 
