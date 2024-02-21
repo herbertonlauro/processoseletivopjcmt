@@ -1,6 +1,8 @@
 package com.herbertonpjcmt.dto;
 
 
+import com.herbertonpjcmt.model.Pessoa;
+import com.herbertonpjcmt.model.Unidade;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -14,4 +16,8 @@ public class LotacaoDTO {
     private LocalDate datalotacao;
     private LocalDate dataremocao;
     private String portaria;
+
+    private Unidade unidade;
+
+    private Pessoa pessoa;
 }

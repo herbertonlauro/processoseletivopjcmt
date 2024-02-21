@@ -4,9 +4,10 @@ import com.herbertonpjcmt.dto.LotacaoDTO;
 import com.herbertonpjcmt.model.Lotacao;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
+import org.mapstruct.MappingConstants;
 import org.mapstruct.MappingTarget;
 
-@Mapper
+@Mapper(componentModel = MappingConstants.ComponentModel.JAKARTA_CDI)
 public interface LotacaoMapper {
         LotacaoDTO toDTO(Lotacao Lotacao);
 
