@@ -36,12 +36,12 @@ public class Pessoa {
     @Column(name = "pes_pai", length = 200)
     private String pai;
 
-    @ManyToMany
-    @JoinTable(name = "pessoa_endereco", joinColumns = @JoinColumn(name = "pes_id"), inverseJoinColumns = @JoinColumn(name = "end_id"))
-    private Set<Endereco> endereco;
-
-    @OneToMany
-    @JoinColumn(name = "pessoa")
-    private List<FotoPessoa> fotoPessoas;
+//    @ManyToMany
+//    @JoinTable(name = "pessoa_endereco", joinColumns = @JoinColumn(name = "pes_id"), inverseJoinColumns = @JoinColumn(name = "end_id"))
+//    private Set<Endereco> endereco;
+//
+//    @OneToMany
+//    @JoinColumn(name = "pessoa")
+//    private List<FotoPessoa> fotoPessoas;
 
 }
