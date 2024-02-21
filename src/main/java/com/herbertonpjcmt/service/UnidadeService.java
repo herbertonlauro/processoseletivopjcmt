@@ -8,9 +8,9 @@ import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
 import jakarta.ws.rs.NotFoundException;
-import lombok.AllArgsConstructor;
 
-import java.util.ArrayList;
+
+
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -34,6 +34,7 @@ public class UnidadeService {
         unidadeRepository.persist(unidade);
         return unidadeMapper.toDTO(unidade);
     }
+
     @Transactional
     public UnidadeDTO editar(Long id, UnidadeDTO unidadeDTO){
         Unidade unidade = unidadeRepository.findByIdOptional(id).orElseThrow(() -> new NotFoundException("Não encontrado"));
@@ -41,11 +42,13 @@ public class UnidadeService {
         unidadeRepository.persist(unidade);
         return unidadeMapper.toDTO(unidade);
     }
+
     @Transactional
     public void deletar(Long id){
         Unidade unidade = unidadeRepository.findByIdOptional(id).orElseThrow(() -> new NotFoundException("Não entrontrado"));
         unidadeRepository.delete(unidade);
     }
+
     @Transactional
     public UnidadeDTO listarporid(Long id){
         Unidade unidade = unidadeRepository.findByIdOptional(id).orElseThrow(() -> new NotFoundException("não encontrado"));
