@@ -4,16 +4,18 @@ import com.herbertonpjcmt.dto.ServidorEfetivoDTO;
 import com.herbertonpjcmt.model.ServidorEfetivo;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
+import org.mapstruct.MappingConstants;
 import org.mapstruct.MappingTarget;
 
-@Mapper
+@Mapper(componentModel = MappingConstants.ComponentModel.JAKARTA_CDI)
 public interface ServidorEfetivoMapper {
 
-    ServidorEfetivoDTO servidortoDTO(ServidorEfetivo servidorEfetivo);
+    ServidorEfetivoDTO toDTO(ServidorEfetivo servidorEfetivo);
+
 
     @Mapping(target = "id", ignore = true)
-    ServidorEfetivo DTOtoservidorE(ServidorEfetivoDTO servidorEfetivoDTO);
+    ServidorEfetivo toEntity(ServidorEfetivoDTO servidorEfetivoDTO);
 
-    void upServidor (@MappingTarget ServidorEfetivo servidorEfetivo, ServidorEfetivoDTO servidorEfetivoDTO);
+    void uptoDTO (@MappingTarget ServidorEfetivo servidorEfetivo, ServidorEfetivoDTO servidorEfetivoDTO);
 
 }

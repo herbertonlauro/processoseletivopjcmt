@@ -10,14 +10,9 @@ public class ServidorEfetivoDTO {
 
 
     private String matricula;
-
     private String nome;
-
     private LocalDate datanascimento;
-
     private String sexo;
-
     private String mae;
-
     private String pai;
 }
