@@ -7,6 +7,7 @@ import com.herbertonpjcmt.repository.ServidorEfetivoRepository;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
+import jakarta.ws.rs.NotFoundException;
 
 import java.util.List;
 @ApplicationScoped
@@ -28,5 +29,16 @@ public class ServidorEfetivoService {
         servidorRepository.persist(efetivoDTO);
         return servidorMapper.toDTO(efetivoDTO);
     }
-
+    @Transactional
+    public ServidorEfetivoDTO editar(Long id, ServidorEfetivoDTO servidorEfetivoDTO){
+        ServidorEfetivo servidor = servidorRepository.findByIdOptional(id).orElseThrow(() -> new NotFoundException("Não encontrado"));
+        servidorMapper.uptoDTO(servidor,servidorEfetivoDTO);
+        servidorRepository.persist(servidor);
+        return servidorMapper.toDTO(servidor);
+    }
+    @Transactional
+    public void deletar(Long id){
+        ServidorEfetivo servidor = servidorRepository.findByIdOptional(id).orElseThrow(() -> new NotFoundException("Não encontrado"));
+        servidorRepository.delete(servidor);
+    }
 }

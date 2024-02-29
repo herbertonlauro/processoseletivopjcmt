@@ -9,13 +9,13 @@ import org.mapstruct.MappingTarget;
 @Mapper
 public interface ServidorTemporarioMapper {
 
-    ServidorTemporarioDTO servidortoDTO(ServidorTemporario servidorTemporario);
+    ServidorTemporarioDTO toDTO(ServidorTemporario servidorTemporario);
 
     @Mapping(target = "id", ignore = true)
-    ServidorTemporario DTOservidor(ServidorTemporarioDTO servidorTemporarioDTO);
+    ServidorTemporario toEntity(ServidorTemporarioDTO servidorTemporarioDTO);
 
 
-    void upServidor(@MappingTarget ServidorTemporario servidorTemporario, ServidorTemporarioDTO servidorTemporarioDTO);
+    void uptoDTO(@MappingTarget ServidorTemporario servidorTemporario, ServidorTemporarioDTO servidorTemporarioDTO);
 
 
 }
